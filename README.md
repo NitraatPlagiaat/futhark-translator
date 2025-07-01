@@ -28,5 +28,5 @@ The above is what I mostly don't see in online rune translators what. Points bel
 
 ## Sources
 [Elder Futhark (Wikipedia)](https://en.wikipedia.org/wiki/Elder_Futhark)<br/>
-[Runic unicode block (Wikipedia)](https://en.wikipedia.org/wiki/Runic_(Unicode_block))
+[Runic unicode block (Wikipedia)](https://en.wikipedia.org/wiki/Runic_(Unicode_block))<br/>
 [RobWords - Why we should go back writing in runes (YouTube)](https://www.youtube.com/watch?v=4npuVmGxXuk)
