@@ -5,7 +5,7 @@ Futhark Translator translates Latin readable text to correct Elder Futhark runes
 ## What is Elder Futhark
 
 Elder Futhark is the oldest human writing system of the Germanic language family mostly used by the Northwest Germanic folks living in what now is known as Sweden, Denmark, Norway and Iceland.
-Elder Futhark has been used from the 2nd to the 8th century until it was changed to Younger Futhark used by the vikings. In the same period, The ANglo-Saxons and Frisians made their own
+Elder Futhark has been used from the 2nd to the 8th century until it was changed to Younger Futhark used by the vikings. In the same period, The Anglo-Saxons and Frisians made their own
 version of Younger Futhark called Anglo-Saxon Futhorc.
 
 ## Important to know about Elder Futhark
@@ -16,8 +16,8 @@ The reason I say it is possible, is that it comes close to our Alphabet, but som
 You may have spotted the word "correct" in the main title of this text. And that is because most rune translators are not always correctly translating.
 So here are some Elder Futhark writing rules listed for you.
 
-- Vowels are written once at a time (e.g. "beer" becomes "ber" written in EF).
-- Elder Futhark is completely based on phonetics (e.g. "You" becomes "Juw" written in EF).
+- Vowels are written once at a time (e.g. beer -> ber -> ᛒᛖᚱ (Berkanan, Ehwaz, Raido)).
+- Elder Futhark is completely based on phonetics (e.g. You -> Ju -> ᛃᚢ (Jera, Uruz)).
 
 The above is what I mostly don't see in online rune translators what. Points below are nice to know about EF but won't be in the program (yet)
 
