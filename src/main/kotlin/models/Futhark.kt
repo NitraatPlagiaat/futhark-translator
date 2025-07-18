@@ -2,7 +2,7 @@ package models
 
 import kotlin.collections.iterator
 
-val elderFutharkRunes = mapOf<String, Char>(
+val elderFutharkRunes = mapOf(
     "Fehu" to '\u16A0',
     "Uruz" to '\u16A2',
     "Thurisaz" to '\u16A6',
@@ -39,4 +39,9 @@ fun printFuthark() {
     for (rune in elderFutharkRunes) {
         print("$rune ")
     }
+    println()
+}
+
+fun getRune(runeName: String): Char? {
+    return elderFutharkRunes[runeName]
 }
