@@ -26,8 +26,10 @@ val romanToFuthark = mapOf(
     'w' to "Wunjo",
     'x' to "Sowilo",
     'y' to "Iwaz",
-    'z' to "Sowilo"
+    'z' to "Algiz"
 )
+
+val vowels = arrayOf('a', 'e', 'i', 'o', 'u')
 
 fun getCorrespondingRune(letter: Char): Char? {
     val runeName: String = romanToFuthark[letter] ?: return null

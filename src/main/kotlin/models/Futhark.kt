@@ -1,6 +1,7 @@
 package models
 
 import kotlin.collections.iterator
+import models.romanToFuthark
 
 val elderFutharkRunes = mapOf(
     "Fehu" to '\u16A0',
@@ -44,4 +45,14 @@ fun printFuthark() {
 
 fun getRune(runeName: String): Char? {
     return elderFutharkRunes[runeName]
+}
+
+fun checkExtraVowel(text: String, index: Int): Char? {
+    if (index + 1 < text.length) {
+        if (text[index + 1] == text[index]){
+            val runeName = romanToFuthark[text[index]]
+            return elderFutharkRunes[runeName]
+        }
+    }
+    return null
 }
