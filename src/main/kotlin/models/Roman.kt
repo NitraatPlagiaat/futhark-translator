@@ -1,5 +1,7 @@
 package models
 
+import controllers.skipLetter
+
 val romanToFuthark = mapOf(
     'a' to "Ansuz",
     'b' to "Berkanan",
@@ -34,4 +36,19 @@ val vowels = arrayOf('a', 'e', 'i', 'o', 'u')
 fun getCorrespondingRune(letter: Char): Char? {
     val runeName: String = romanToFuthark[letter] ?: return null
     return getRune(runeName)
+}
+
+fun checkWritingRules(text: String, index: Int): Char? {
+    val standardRune = getCorrespondingRune(text[index])
+    var rune: Char? = null
+    if (text[index] in vowels) {
+        rune = checkExtraVowel(text, index)
+    } else {
+        rune = checkAlternates(text, index)
+    }
+    if (rune != null) {
+        skipLetter = true
+        return rune
+    }
+    return standardRune
 }
