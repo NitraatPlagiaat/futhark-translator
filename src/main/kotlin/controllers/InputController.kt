@@ -1,8 +1,6 @@
 package controllers
 
-import models.getCorrespondingRune
-import models.checkExtraVowel
-import models.vowels
+import models.checkWritingRules
 
 var skipLetter = false
 
@@ -25,17 +23,4 @@ fun input(text: String) {
         }
     }
     println(futharkConversion)
-}
-
-fun checkWritingRules(text: String, index: Int): Char? {
-    val standardRune = getCorrespondingRune(text[index])
-    if (text[index] in vowels) {
-        val rune = checkExtraVowel(text, index)
-        if (rune != null) {
-            skipLetter = true
-            return rune
-        }
-    }
-
-    return standardRune
 }
