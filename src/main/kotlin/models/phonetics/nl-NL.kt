@@ -1,6 +1,10 @@
 package models.phonetics
 
-fun convertPhonetics(sentence: String): String {
+var graphemes = mapOf(
+    "y" to ::getPhoneticForY
+)
+
+fun convertPhoneticsNL(sentence: String): String {
     var phoneticSentence = ""
     for (letter in sentence) {
         var tempLetter: Char = letter
@@ -10,5 +14,9 @@ fun convertPhonetics(sentence: String): String {
         }
         phoneticSentence += tempLetter
     }
-    return sentence
+    return phoneticSentence
+}
+
+fun getPhoneticForY() {
+
 }
