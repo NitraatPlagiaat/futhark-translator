@@ -1,7 +1,7 @@
 package models.phonetics
 
 var graphemes = mapOf(
-    "y" to ::getPhoneticForY
+    "y" to { input: String -> getPhoneticForY(input) }
 )
 
 fun convertPhoneticsNL(sentence: String): String {
@@ -17,6 +17,6 @@ fun convertPhoneticsNL(sentence: String): String {
     return phoneticSentence
 }
 
-fun getPhoneticForY() {
+fun getPhoneticForY(input: String) {
 
 }
