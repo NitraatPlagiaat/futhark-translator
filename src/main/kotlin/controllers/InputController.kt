@@ -1,6 +1,6 @@
 package controllers
-
 import models.checkWritingRules
+import models.phonetics.convertPhoneticsNL
 
 var skipLetter = false
 
