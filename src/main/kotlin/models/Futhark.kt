@@ -49,20 +49,8 @@ fun getRune(runeName: String): Char? {
 fun checkExtraVowel(text: String, index: Int): Char? {
     if (index + 1 < text.length) {
         if (text[index + 1] == text[index]){
-            val runeName = romanToFuthark[text[index]]
+            val runeName = romanToFuthark[text[index].toString()]
             return elderFutharkRunes[runeName]
-        }
-    }
-    return null
-}
-
-fun checkAlternates(text: String, index: Int): Char? {
-    if (index + 1 < text.length) {
-        if (text[index] == 't' && text[index + 1] == 'h') {
-            return elderFutharkRunes["Thurisaz"]
-        }
-        if (text[index] == 'n' && text[index + 1] == 'g') {
-            return elderFutharkRunes["Ingwaz"]
         }
     }
     return null
