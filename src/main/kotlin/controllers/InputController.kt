@@ -6,7 +6,6 @@ var skipLetter = false
 fun input(text: String) {
     var futharkConversion = ""
     for (letter in text.indices) {
-
         if (skipLetter){
             skipLetter = false
             continue

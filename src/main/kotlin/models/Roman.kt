@@ -38,13 +38,15 @@ val vowels = arrayOf('a', 'e', 'i', 'o', 'u')
 
 fun getCorrespondingRune(text: String, index: Int): Char? {
     var letter = text[index].toString()
-    if (letter == "n" && text[index+1] == 'g') {
-        letter = "ng"
-        skipLetter = true
-    }
-    if (letter == "t" && text[index+1] == 'h') {
-        letter = "th"
-        skipLetter = true
+    if (index + 1 < text.length) {
+        if (letter == "n" && text[index + 1] == 'g') {
+            letter = "ng"
+            skipLetter = true
+        }
+        if (letter == "t" && text[index + 1] == 'h') {
+            letter = "th"
+            skipLetter = true
+        }
     }
     val runeName: String = romanToFuthark[letter] ?: return null
     return getRune(runeName)
@@ -53,16 +55,18 @@ fun getCorrespondingRune(text: String, index: Int): Char? {
 fun checkWritingRules(text: String, index: Int): Char? {
     val standardRune = getCorrespondingRune(text, index)
     var rune: Char? = null
-    if (graphemes.containsKey(text[index].toString())) {
-        rune = graphemes[text[index].toString()]?.invoke(text, index)
-    }
-    if (text[index] in vowels) {
-        rune = checkExtraVowel(text, index)
+    if (index + 1 < text.length) {
+        if (graphemes.containsKey(text[index].toString())) {
+            rune = graphemes[text[index].toString()]?.invoke(text, index)
+        }
+        if (text[index] in vowels) {
+            rune = checkExtraVowel(text, index, rune)
+            if (rune != null) {
+                skipLetter = true
+            }
+        }
     }
     if (rune != null) {
-        if (rune in vowels){
-            skipLetter = true
-        }
         return rune
     }
     return standardRune
