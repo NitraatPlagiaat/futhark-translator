@@ -25,7 +25,7 @@ val romanToFuthark = mapOf(
     "s" to "Sowilo",
     "t" to "Tiwaz",
     "u" to "Uruz",
-    "v" to "Fehu",
+    "v" to "Wunjo",
     "w" to "Wunjo",
     "x" to "Sowilo",
     "y" to "Iwaz",

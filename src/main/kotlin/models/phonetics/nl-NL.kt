@@ -11,13 +11,16 @@ var graphemes = mapOf(
 )
 
 fun getPhoneticForC(input: String, index: Int): Char? {
-    if (input[index+1] == 'h') {
+    if (input[index+1] == 'h' && input[index-1] == 's') {
         skipLetter = true
         return elderFutharkRunes["Gebo"]
     }
     if (input[index+1] == 'k') {
         skipLetter = true
         return elderFutharkRunes["Kauna"]
+    }
+    if (input[index+1] == 'i') {
+        return elderFutharkRunes["Sowilo"]
     }
     return null
 }
