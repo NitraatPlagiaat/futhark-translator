@@ -1,5 +1,5 @@
 package controllers
-import models.checkWritingRules
+import org.example.models.mapping.checkWritingRules
 
 var skipLetter = false
 
