@@ -1,5 +1,5 @@
 package org.example
-import models.printFuthark
+import org.example.models.mapping.printFuthark
 import controllers.input
 import java.lang.NumberFormatException
 import kotlin.system.exitProcess

@@ -1,7 +1,7 @@
 package models.phonetics
 
-import models.vowels
-import models.elderFutharkRunes
+import org.example.models.mapping.vowels
+import org.example.models.mapping.elderFutharkRunes
 import controllers.skipLetter
 var graphemes = mapOf(
     "c" to { input: String, index: Int -> getPhoneticForC(input, index) },
