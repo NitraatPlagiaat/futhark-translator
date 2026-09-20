@@ -45,7 +45,7 @@ fun alphabetToRunes() {
 
         if (text == "~") { break }
 
-        input(text.lowercase())
+        println(input(text.lowercase()))
     }
 }
 
