@@ -29,7 +29,7 @@ fun main() {
         when (choice) {
             1 -> alphabetToRunes()
             2 -> printFuthark()
-            3 -> "Not implemented yet"
+            3 -> about()
             4 -> exitProcess(0)
             else -> print("You didn't type in a number\n\n")
         }
@@ -47,4 +47,18 @@ fun alphabetToRunes() {
 
         input(text.lowercase())
     }
+}
+
+fun about() {
+    val aboutInfo = """
+        |________________________________
+        |ABOUT
+        |
+        |Rúnatýr
+        |Programmed by Yirnick van Dijk
+        |program version: 0.2-FEHU
+        |________________________________
+    """.trimMargin()
+
+    println(aboutInfo)
 }
