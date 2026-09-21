@@ -1,9 +1,9 @@
 package controllers
-import models.checkWritingRules
+import org.example.models.mapping.checkWritingRules
 
 var skipLetter = false
 
-fun input(text: String) {
+fun input(text: String): String {
     var futharkConversion = ""
     for (letter in text.indices) {
         if (skipLetter){
@@ -20,5 +20,5 @@ fun input(text: String) {
             }
         }
     }
-    println(futharkConversion)
+    return futharkConversion
 }

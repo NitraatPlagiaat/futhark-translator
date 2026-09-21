@@ -1,7 +1,7 @@
 package models.phonetics
 
-import models.vowels
-import models.elderFutharkRunes
+import org.example.models.mapping.vowels
+import org.example.models.mapping.elderFutharkRunes
 import controllers.skipLetter
 var graphemes = mapOf(
     "c" to { input: String, index: Int -> getPhoneticForC(input, index) },
@@ -11,16 +11,20 @@ var graphemes = mapOf(
 )
 
 fun getPhoneticForC(input: String, index: Int): Char? {
-    if (input[index+1] == 'h' && input[index-1] == 's') {
-        skipLetter = true
-        return elderFutharkRunes["Gebo"]
-    }
-    if (input[index+1] == 'k') {
-        skipLetter = true
-        return elderFutharkRunes["Kauna"]
-    }
-    if (input[index+1] == 'i') {
-        return elderFutharkRunes["Sowilo"]
+    when (input[index + 1]) {
+        'h' -> when (input[index - 1]) {
+            's' -> {
+                skipLetter = true
+                return elderFutharkRunes["Gebo"]
+            }
+        }
+
+        'k' -> {
+            skipLetter = true
+            return elderFutharkRunes["Kauna"]
+        }
+
+        'i' -> return elderFutharkRunes["Sowilo"]
     }
     return null
 }
@@ -42,11 +46,9 @@ fun getPhoneticForI(input: String, index: Int): Char? {
 }
 
 fun getPhoneticForY(input: String, index: Int): Char? {
-    if (input[index+1] in vowels) {
-        return elderFutharkRunes["Jeran"]
-    }
-    if (input[index+1] == 'n') {
-        return elderFutharkRunes["Isaz"]
+    when (input[index + 1]) {
+        in vowels -> return elderFutharkRunes["Jeran"]
+        'n' -> return elderFutharkRunes["Isaz"]
     }
     return null
 }

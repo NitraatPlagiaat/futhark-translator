@@ -1,4 +1,4 @@
-package models
+package org.example.models.mapping
 
 import controllers.skipLetter
 import models.phonetics.graphemes
