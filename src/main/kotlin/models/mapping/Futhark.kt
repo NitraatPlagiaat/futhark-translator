@@ -2,6 +2,7 @@ package org.example.models.mapping
 
 import kotlin.collections.iterator
 
+//Rune names mapped to the corresponding rune in unicode
 val elderFutharkRunes = mapOf(
     "Fehu" to '\u16A0',
     "Uruz" to '\u16A2',
@@ -29,6 +30,7 @@ val elderFutharkRunes = mapOf(
     "Othalan" to '\u16DF'
 )
 
+//Print all the runes and thier names
 fun printFuthark() {
     println("The Elder Futhark runes:")
     for (rune in elderFutharkRunes) {
@@ -42,10 +44,15 @@ fun printFuthark() {
     println()
 }
 
+//Return the standard rune
 fun getRune(runeName: String): Char? {
     return elderFutharkRunes[runeName]
 }
 
+/*
+Check for double in a row vowels and
+return one corresponding rune to both vowels
+ */
 fun checkExtraVowel(text: String, index: Int, rune: Char?): Char? {
     if (index + 1 < text.length && rune == null) {
         if (text[index + 1] == text[index]){
