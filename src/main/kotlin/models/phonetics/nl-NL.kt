@@ -3,6 +3,11 @@ package models.phonetics
 import org.example.models.mapping.vowels
 import org.example.models.mapping.elderFutharkRunes
 import controllers.skipLetter
+
+/*
+Graphemes for the letters that change pronounciation
+based on what comes before or after the letter
+ */
 var graphemes = mapOf(
     "c" to { input: String, index: Int -> getPhoneticForC(input, index) },
     "e" to { input: String, index: Int -> getPhoneticForE(input, index) },
@@ -10,6 +15,7 @@ var graphemes = mapOf(
     "y" to { input: String, index: Int -> getPhoneticForY(input, index) }
 )
 
+//Change the rune based on the phonetic for the letter C
 fun getPhoneticForC(input: String, index: Int): Char? {
     when (input[index + 1]) {
         'h' -> when (input[index - 1]) {
@@ -29,6 +35,7 @@ fun getPhoneticForC(input: String, index: Int): Char? {
     return null
 }
 
+//Change the rune based on the phonetic for the letter E
 fun getPhoneticForE(input: String, index: Int): Char? {
     if (input[index+1] == 'i') {
         skipLetter = true
@@ -37,6 +44,7 @@ fun getPhoneticForE(input: String, index: Int): Char? {
     return null
 }
 
+//Change the rune based on the phonetic for the letter I
 fun getPhoneticForI(input: String, index: Int): Char? {
     if (input[index+1] == 'j') {
         skipLetter = true
@@ -45,6 +53,7 @@ fun getPhoneticForI(input: String, index: Int): Char? {
     return null
 }
 
+//Change the rune based on the phonetic for the letter Y
 fun getPhoneticForY(input: String, index: Int): Char? {
     when (input[index + 1]) {
         in vowels -> return elderFutharkRunes["Jeran"]

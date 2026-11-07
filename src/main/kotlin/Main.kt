@@ -6,6 +6,8 @@ import kotlin.system.exitProcess
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+//Show a multiple choice menu and let the user interat with it.
 fun main() {
     print("Welcome to Rúnatýr\n")
     println()
@@ -36,6 +38,7 @@ fun main() {
     }
 }
 
+//Start the alphabet to runes converter
 fun alphabetToRunes() {
     print("You are now converting alphabet to runes. To go back to the main menu, type ~\n")
     while (true) {
@@ -49,6 +52,7 @@ fun alphabetToRunes() {
     }
 }
 
+//Show the about page saying about the developer and the program information
 fun about() {
     val aboutInfo = """
         |________________________________

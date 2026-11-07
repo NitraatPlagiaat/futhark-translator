@@ -3,6 +3,7 @@ package org.example.models.mapping
 import controllers.skipLetter
 import models.phonetics.graphemes
 
+//Letters mapped to the rune names
 val romanToFuthark = mapOf(
     "a" to "Ansuz",
     "b" to "Berkanan",
@@ -36,6 +37,7 @@ val romanToFuthark = mapOf(
 
 val vowels = arrayOf('a', 'e', 'i', 'o', 'u')
 
+//Get the corresponding rune
 fun getCorrespondingRune(text: String, index: Int): Char? {
     var letter = text[index].toString()
     if (index + 1 < text.length) {
@@ -52,6 +54,7 @@ fun getCorrespondingRune(text: String, index: Int): Char? {
     return getRune(runeName)
 }
 
+//Check the writing rules and return a rune best fitting for the word
 fun checkWritingRules(text: String, index: Int): Char? {
     val standardRune = getCorrespondingRune(text, index)
     var rune: Char? = null
@@ -61,6 +64,7 @@ fun checkWritingRules(text: String, index: Int): Char? {
         }
         if (text[index] in vowels) {
             rune = checkExtraVowel(text, index, rune)
+            //Skip one letter when there are 2 of the same letters in a row
             if (rune != null) {
                 skipLetter = true
             }

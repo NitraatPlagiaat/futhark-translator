@@ -3,6 +3,11 @@ import org.example.models.mapping.checkWritingRules
 
 var skipLetter = false
 
+/*
+get input sentence and check the writing rules
+based on what comes before and after the current letter
+return the converted rune sentence
+ */
 fun input(text: String): String {
     var futharkConversion = ""
     for (letter in text.indices) {
